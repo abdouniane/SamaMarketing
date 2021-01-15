@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %} 
+{% block body %}
+
+    {{ form_start(clientForm) }}
+    <div class="card border-primary mb-3" style="max-width: 40rem; border: 0px ">                
+        <div class="card-body"> 
+            <h3>
+                 {% if editMode %}
+                    Modification des informations d'un client
+                {%else %}
+                    Ajout d'un nouveau client
+                {% endif %}
+                
+            </h3>
+            <br/>
+            <div class="form-group">
+                <label for="nom">Nom du Client</label>
+                {{form_widget(clientForm.nom)}}
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom du Client</label>
+                {{form_widget(clientForm.prenom)}}
+            </div>
+            <div class="form-group">
+                <label for="telephone">Numéro de Téléphone</label>
+                {{form_widget(clientForm.telephone)}}
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">
+                {% if editMode %}
+                    Enregistrer les modifications
+                {%else %}
+                    Ajouter le client
+                {% endif %}
+            </button>
+        </div>
+    </div> 
+
+    {{ form_end(clientForm) }} 
+
+{% endblock %}

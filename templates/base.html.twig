@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Sama Marketing{% endblock %}</title> 
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" >
+        {% block stylesheets %} {% endblock %} 
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand nav-link active" href="{{path('message')}}">SamaMarketing</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/message">Home</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/client">Nouveau Client</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mes-clients">Mes Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/historiques">Historiques</a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Paramètres</a>
+                    </li>   
+                </ul>
+
+            </div>
+
+            <div align="left" class="collapse align-content-left  navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="/administrateurs">ADMIN</a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('logout')}}">Déconnexion</a>
+                    </li>  
+                </ul>
+
+            </div>
+        </nav>
+        <div class="container">
+        {% block body %}{% endblock %}
+        </div> 
+    
+{% block javascripts %}{% endblock %}
+</body>
+</html>
